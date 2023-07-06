@@ -1,4 +1,4 @@
-<script type="text/javascript" src="excelToJson.js">
+<script>
     function convertExcel(event) {
       event.preventDefault();
       const file = document.getElementById('myFile')
