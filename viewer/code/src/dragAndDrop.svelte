@@ -1,13 +1,15 @@
 <script>
   import Schedule from "./lib/Schedule.svelte";
   import "./app.css";
-  import Filters from "./lib/Filters.svelte";
+  import DragAndDrop from "./lib/Drop.svelte";
   import Nav from "./lib/components/Nav.svelte";
 </script>
 
 <Nav />
 <main class="pt-12">
-  <div class="">
-    <DragAndDrop />
+  <div>
+    <div>
+      <DragAndDrop />
+    </div>
   </div>
 </main>
