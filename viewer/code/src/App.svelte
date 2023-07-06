@@ -20,8 +20,7 @@
 
 <style>
   #background {
-        background-image: url("../src/assets/images/pier-lake-hallstatt-austria.jpg");
-
+    background: #F4EEE7;
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;

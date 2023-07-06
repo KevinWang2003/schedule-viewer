@@ -15,13 +15,13 @@
     id={lesson.id}
     class="lesson border-2 border-slate-100 rounded-md m-4 flex flex-col {lesson.type ===
     'Exam'
-        ? 'bg-red-400'
-        : 'bg-red-100'}"
+        ? 'bg-cyan-300'
+        : 'bg-cyan-100'}"
     on:mousedown
     data-teachers={lesson.teachers}
     data-groups={lesson.groups}
 >
-    <div class="lesson_head w-full p-4 rounded-md hover:bg-red-300" on:click={() => hoverEffect(lesson.id)}>
+    <div class="lesson_head w-full p-4 rounded-md hover:bg-cyan-200" on:click={() => hoverEffect(lesson.id)}>
         <div class="flex justify-between">
             <p data-card-property="start" class="font-medium">
                 {lesson.start} - {lesson.end}
