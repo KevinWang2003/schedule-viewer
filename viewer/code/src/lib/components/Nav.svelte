@@ -7,5 +7,8 @@
                 >9</span
             >
         </li>
+        <button onclick="location.href='dragAndDrop.html'">
+            drag and drop
+        </button>
     </ul>
 </nav>
