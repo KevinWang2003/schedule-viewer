@@ -1,8 +1,8 @@
 {
-    "availability": [
+    "availability":[
         {
-            "name": "Rimmert",
-            "days": [
+            "name":"Rimmert",
+            "days":[
                 {
                     "nod": "mo",
                     "pod": "full"
@@ -18,10 +18,10 @@
             ]
         },
         {
-            "name": "Loek",
-            "days": [
+            "name":"Rimmert",
+            "days":[
                 {
-                    "nod": "tu",
+                    "nod": "mo",
                     "pod": "full"
                 },
                 {
@@ -30,33 +30,7 @@
                 },
                 {
                     "nod": "th",
-                    "pod": "full"
-                },
-                {
-                    "nod": "fr",
-                    "pod": "full"
-                }
-            ]
-        }
-    ],
-    "vacation": [
-        {
-            "name": "Rimmert",
-            "weeks": [
-                {
-                    "now": [
-                        35,
-                        36,
-                        37
-                    ]
-                }
-            ],
-            "days": [
-                {
-                    "dates": [
-                        "30-11-2023",
-                        "30-01-2024"
-                    ]
+                    "pod": "mo"
                 }
             ]
         }
