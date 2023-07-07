@@ -30,12 +30,13 @@
     background-image: url("../src/assets/images/pier-lake-hallstatt-austria.jpg");
     /* background-image: url("../src/assets/images/drippert.png"); */
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+    /* background: #F4EEE7; */
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
   .unselectable {
     -webkit-touch-callout: none;

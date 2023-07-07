@@ -43,7 +43,7 @@
         ];
         // remove all selected filters
         allFilters.forEach((element) => {
-            element.classList.remove("bg-violet-400");
+            element.classList.remove("bg-cyan-200");
         });
         for (let i = 0; i < properties.length; i++) {
             if (selectedFilters[properties[i]].length === 0) {
@@ -52,7 +52,7 @@
                     // add the background to the element
                     const myEl = properties[i];
                     if (element.dataset.filterGroup === myEl) {
-                        element.classList.add("bg-violet-400");
+                        element.classList.add("bg-cyan-200");
                     }
                 });
             } else {
@@ -64,7 +64,7 @@
                     ];
                     ref.forEach((element) => {
                         element.classList.remove("bg-slate-50");
-                        element.classList.add("bg-violet-400");
+                        element.classList.add("bg-cyan-200");
                     });
                 });
             }
@@ -171,7 +171,7 @@
 <div class="p-5 grid grid-cols-2 md:grid-cols-12 gap-1">
     <h3
         id="filterButton"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-black bg-cyan-100 hover:bg-cyan-200 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         on:click={() => hoverEffect()}
     >
         Filters <svg

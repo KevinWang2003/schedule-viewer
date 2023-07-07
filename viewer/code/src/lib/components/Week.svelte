@@ -50,42 +50,42 @@
           </svg>
         {#if week.weeknr != 36 && week.weeknr != 2}
             <p
-                class="inline-block p-6 rounded-xl text-center bg-gray-200"
+                class="inline-block p-6 rounded-xl text-center bg-cyan-100"
                 style="opacity: 50%; position: relative; top: -2vh;"
             >
                 {week.weeknr - 1}
             </p>
         {:else if week.weeknr == 2}
             <p
-                class="inline-block p-6 rounded-xl text-center bg-gray-200"
+                class="inline-block p-6 rounded-xl text-center bg-cyan-100"
                 style="opacity: 50%; position: relative; top: -2vh;"
             >
                 51
             </p>
         {:else}
             <p
-                class="inline-block p-6 rounded-xl text-center bg-gray-200"
+                class="inline-block p-6 rounded-xl text-center bg-cyan-100"
                 style="opacity: 0%;position: relative; top: -2vh;"
             >
                 {week.weeknr - 1}
             </p>
         {/if}
         <h3
-            class="text-6xl inline-block p-6 rounded-xl text-center text-cyan-400 bg-gray-200"
+            class="text-6xl inline-block p-6 rounded-xl text-center text-black-400 bg-cyan-100"
             id={week.weeknr}
         >
             {week.weeknr}
         </h3>
         {#if week.weeknr != 5 && week.weeknr != 51}
             <p
-                class="inline-block p-6 rounded-xl text-center bg-gray-200"
+                class="inline-block p-6 rounded-xl text-center bg-cyan-100"
                 style="opacity: 50%; position: relative; top: -2vh;"
             >
                 {week.weeknr + 1}
             </p>
         {:else if week.weeknr == 51}
             <p
-                class="inline-block p-6 rounded-xl text-center bg-gray-200"
+                class="inline-block p-6 rounded-xl text-center bg-cyan-100"
                 style="opacity: 50%; position: relative; top: -2vh;"
             >
                 2
