@@ -3,7 +3,6 @@
   import "./app.css";
   import DragAndDrop from "./lib/Drop.svelte";
   import Nav from "./lib/components/Nav.svelte";
-    import DragAndDrop from "./lib/DragAndDrop.svelte";
 </script>
 
 <Nav />

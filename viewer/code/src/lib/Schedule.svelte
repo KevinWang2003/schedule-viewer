@@ -13,27 +13,9 @@
     <p>...waiting</p>
 {:then data}
     <!-- The week -->
-    <div class="scrollable-container">
-        {#each data.data as week}
-            <div class="week">
-                <Week week={week} />
-            </div>
-        {/each}
-    </div>
+    {#each data.data as week}
+        <Week week={week} />
+    {/each}
 {:catch error}
     <p>An error occurred!</p>
 {/await}
-
-<style>
-    .scrollable-container {
-        overflow: hidden;
-        white-space: nowrap;
-        scroll-behavior: auto;
-    }
-
-    .week {
-        display: inline-block;
-        width: 100vw; /* Adjust as needed */
-        white-space: normal;
-    }
-</style>
