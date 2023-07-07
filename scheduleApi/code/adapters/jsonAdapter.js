@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { writeJSON } from "write-json-safe";
 
 /**
  * Get the right json from the data folder based on the request
@@ -15,4 +16,10 @@ export async function getTheSchedule(year) {
     let student = JSON.parse(data);
     console.log(student);
   });
+}
+
+export function uploadFile(json) {
+  console.log('Writing file...')
+  writeJSON('./data/output.json', json)
+  console.log('File written!')
 }

@@ -1,4 +1,7 @@
 import schedule from '../data/output.json' assert { type: 'json' };
+import formidable, { errors as formidableErrors } from 'formidable';
+import excelToJson from 'convert-excel-to-json';
+import { uploadFile } from '../adapters/jsonAdapter.js';
 
 export async function getScheduleData(req, res) {
   res.send(schedule);
@@ -7,6 +10,50 @@ export async function getScheduleData(req, res) {
 export async function getProperties(req, res) {
   const properties = ['Course_name', 'Start', 'End', 'Subject', 'Groepen', 'Docenten', 'Lokalen'];
   res.send(properties);
+}
+
+export async function addSchedule(req, res) {
+  const form = formidable({});
+  let fields;
+  let files;
+  try {
+    [fields, files] = await form.parse(req);
+    console.log(files.filename[0].filepath)
+  } catch (err) {
+    console.error(err);
+  }
+  const result = excelToJson({
+    sourceFile: files.filename[0].filepath,
+    header: {
+      rows: 1,
+    },
+    sheets: ['sem3'],
+    columnToKey: {
+      A: '{{A1}}',
+      B: '{{B1}}',
+      C: '{{C1}}',
+      D: '{{D1}}',
+      E: '{{E1}}',
+      F: '{{F1}}',
+      G: '{{G1}}',
+      H: '{{H1}}',
+      I: '{{I1}}',
+      J: '{{J1}}',
+      K: '{{K1}}',
+      L: '{{L1}}',
+      M: '{{M1}}',
+      N: '{{N1}}',
+      O: '{{O1}}',
+      P: '{{P1}}',
+      Q: '{{Q1}}',
+      R: '{{R1}}',
+    },
+  });
+  console.log(result)
+  uploadFile(result)
+  res.status(200)
+  res.redirect('http://127.0.0.1:3020/index.html')
+  res.send()
 }
 
 export async function getGroups(req, res) {
@@ -61,16 +108,16 @@ export async function getTeacher(req, res) {
   // res.send(uniqueNames);
 }
 
-export async function getAllSchedules(req, res){
+export async function getAllSchedules(req, res) {
   res.status(200).send('Please be more specific');
 }
-export async function getAllYears(req, res){
+export async function getAllYears(req, res) {
   res.status(200).send('Please be more specific');
 }
-export async function getAllTerms(req, res){
+export async function getAllTerms(req, res) {
   res.status(200).send('Please be more specific');
 }
-export async function getScheduleDataPerTerm(req, res){
+export async function getScheduleDataPerTerm(req, res) {
   const year = req.params.yearid;
   const term = req.params.termid;
 

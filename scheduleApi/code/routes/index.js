@@ -6,6 +6,7 @@ import {
   getProperties,
   getScheduleData, getTeacher, getWeeks,
   getAllSchedules,
+  addSchedule,
   getAllYears,
   getAllTerms,
   getScheduleDataPerTerm
@@ -16,19 +17,19 @@ router.get('/', cors(), (req, res, next) => {
   res.json('Welcome to your local scheduler 🐶');
 });
 
-
 /**
  * all appointments routes
  */
 router.options('/schedule', (req, res, next) => {
-  //set header before response
-  res.header({
-    allow: 'GET, POST, OPTIONS',
-    'Content-type': 'application/json',
-    Data: Date.now(),
-    'Content-length': 0,
-  });
-  //response
+  // Set the appropriate headers
+  res.header('Allow', 'GET, POST');
+  // res.header('Content-Type', '*');
+  // res.header('Access-Control-Allow-Origin', '*');
+  // res.header('Access-Control-Allow-Headers', '*');
+  res.header('Data', Date.now());
+  // res.header('Content-Length', 0);
+
+  // Send the response
   res.sendStatus(200);
 });
 
@@ -37,6 +38,7 @@ const baseUrlV1 = '/api/v1';
 
 // get a collection of all the appointments and ou can use a query
 router.get('/schedule', cors(), getScheduleData);
+router.post('/schedule', cors(), addSchedule);
 router.get('/teachers', cors(), getTeacher);
 router.get('/groups', cors(), getGroups);
 router.get('/weeks', cors(), getWeeks);
