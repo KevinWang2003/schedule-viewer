@@ -43,7 +43,7 @@
         ];
         // remove all selected filters
         allFilters.forEach((element) => {
-            element.classList.remove("bg-violet-400");
+            element.classList.remove("bg-cyan-200");
         });
         for (let i = 0; i < properties.length; i++) {
             if (selectedFilters[properties[i]].length === 0) {
@@ -52,7 +52,7 @@
                     // add the background to the element
                     const myEl = properties[i];
                     if (element.dataset.filterGroup === myEl) {
-                        element.classList.add("bg-violet-400");
+                        element.classList.add("bg-cyan-200");
                     }
                 });
             } else {
@@ -64,7 +64,7 @@
                     ];
                     ref.forEach((element) => {
                         element.classList.remove("bg-slate-50");
-                        element.classList.add("bg-violet-400");
+                        element.classList.add("bg-cyan-200");
                     });
                 });
             }
@@ -146,11 +146,54 @@
         //
         showLessonBasedOnFilter();
     };
+
+    function hoverEffect() {
+        const mainButton = document.getElementById("filterButton");
+        const button1 = document.getElementById("generalFilterButton");
+
+        if (!mainButton.classList.contains("moved")) {
+            // Show the other buttons
+            button1.classList.remove("hidden");
+
+            // Move the main button to the right
+            mainButton.classList.add("moved");
+        } else {
+            // Hide the other buttons
+            button1.classList.add("hidden");
+
+            // Move the main button to the left
+            mainButton.classList.remove("moved");
+        }
+        console.log(mainButton.classList);
+    }
 </script>
 
-<div class="p-4">
-    <h3 class="filters">Filters</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="p-5 grid grid-cols-2 md:grid-cols-12 gap-1">
+    <h3
+        id="filterButton"
+        class="text-black bg-cyan-100 hover:bg-cyan-200 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        on:click={() => hoverEffect()}
+    >
+        Filters <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="-5 -1 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+            />
+        </svg>
+    </h3>
+    <div
+        id="generalFilterButton"
+        class="grid grid-cols-2 md:grid-cols-2 gap-1 hidden"
+        style="width: 17vw; margin-top: 1vh"
+    >
         <Filter
             filter="teachers"
             name="Teachers"
@@ -164,3 +207,13 @@
         />
     </div>
 </div>
+
+<style>
+    .hidden {
+        display: "none";
+    }
+
+    .moved {
+        left: 50vw;
+    }
+</style>
