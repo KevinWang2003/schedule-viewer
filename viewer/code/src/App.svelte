@@ -3,6 +3,8 @@
   import "./app.css";
   import Filters from "./lib/Filters.svelte";
   import Nav from "./lib/components/Nav.svelte";
+  import ChatBot from "./lib/ChatBot.svelte";
+  export let props;
 </script>
 
 <Nav />
@@ -11,7 +13,12 @@
     <div class="">
       <Filters />
     </div>
-  
+
+    <div class="">
+      <!-- Pass the openai prop to the ChatBot component -->
+      <ChatBot />
+    </div>
+
     <div class="">
       <Schedule />
     </div>
@@ -20,21 +27,22 @@
 
 <style>
   #background {
-        background-image: url("../src/assets/images/pier-lake-hallstatt-austria.jpg");
+    background-image: url("../src/assets/images/pier-lake-hallstatt-austria.jpg");
+    /* background-image: url("../src/assets/images/drippert.png"); */
 
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-    .unselectable {
+  .unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+  }
 </style>
