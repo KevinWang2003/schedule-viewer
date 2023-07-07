@@ -31,7 +31,7 @@
         }
     };
 
-    //change to colors of the filters
+    //change to colors of the filters.
     const applyFilters = () => {
         const allLessons = document.querySelectorAll(".lesson");
         // find all filters (as property) in selectedFilters object
